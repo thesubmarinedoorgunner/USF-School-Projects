@@ -8,18 +8,19 @@ public class JumpingJim
 
     public static void main(String args[])
     {
-        int n = 5;
-        for (int i = 0; i < n; i++)
-        {
-            Node node = new Node();
-        }
+        JumpingJim jumper = new JumpingJim();
+        // int n = 5;
+        // for (int i = 0; i < n; i++)
+        // {
+        //     Node node = new Node();
+        // }
     }
 
 
 
 
 
-    public static class Node
+    public class Node
     {
         private Node previous;
         private Node next;
