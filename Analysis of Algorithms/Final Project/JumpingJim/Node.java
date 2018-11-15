@@ -68,5 +68,27 @@ public class Node
         return false;
     }
 
+    public int getDirection(Node another)
+    {
+        // edge case with the bottom right node ?
+
+        int another_col = another.getCol();
+        int another_row = another.getRow();
+
+        if ( this.col == another_col )
+        {
+            if ( this.row > another_row ) { return 1; } // north
+            else if ( this.row < another_row ) { return 3; } // south
+        }
+        else if ( this.row == another_row )
+        {
+            if ( this.col > another_col ) { return 4; } // west
+            else if( this.col < another_col ) { return 2; } // east
+        }
+        
+        // none match which is a hella problem
+        return -1; 
+    }
+
 
 }
