@@ -19,6 +19,8 @@ public class Node
     private int col;
     private int row;
     // 
+    // Do I need: 
+    // private Edge northEdge ?
 
     // Node() { this.previous = this.next = null; this.number = -1; }
     Node () { this.north = this.south = this.east = this.west = null; this.number = -1;}
@@ -85,7 +87,7 @@ public class Node
             if ( this.col > another_col ) { return 4; } // west
             else if( this.col < another_col ) { return 2; } // east
         }
-        
+
         // none match which is a hella problem
         return -1; 
     }
