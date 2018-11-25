@@ -3,6 +3,7 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class JumpingJim
 {
@@ -11,10 +12,9 @@ public class JumpingJim
         int row, column;
         int[][] matrix;
         File file = new File("input.txt");
-        // if (file != null)
-        // {
-        //     System.out.println("File read?");
-        // }
+        ArrayList<Node> nodes = new ArrayList<Node>();
+        ArrayList<Edge> edges = new ArrayList<Edge>();
+
         try 
         {
             Scanner s = new Scanner(file);
@@ -22,26 +22,42 @@ public class JumpingJim
             column = s.nextInt();
             matrix = new int[row][column];
 
-            int i = 0, j = 0;
+            int r = 0, c = 0;
 
             while ( s.hasNextLine() )
             {
-                int a = s.nextInt();
-                matrix[i][j] = a;
-                j++;
-                if ( j == column ) { j = 0; i++; }
-                if ( i == row ) { break; }
+                int integer = s.nextInt();
+                matrix[r][c] = integer;
+                c++;
+                if ( c == column ) { c = 0; r++; }
+                if ( r == row ) { break; }
+                // will discard anything that goes past the specified rows
             }
             s.close();
 
-            for (int x = 0; x < row; x++)
+            // for (int x = 0; x < row; x++)
+            // {
+            //     for (int y = 0; y < column; y++)
+            //     {
+            //         System.out.print(matrix[x][y] + " ");
+            //     }
+            //     System.out.println();
+            // }
+            for (int i = 0; i < row; i++)
             {
-                for (int y = 0; y < column; y++)
+                for (int j = 0; j < column; j++)
                 {
-                    System.out.print(matrix[x][y] + " ");
+                    nodes.add ( new Node ( i, j, matrix[i][j]) ); // passing row, col, and number
                 }
-                System.out.println();
             }
+            for (int i = 0; i < row; i++)
+            {
+                for (int j = 0; j < column; j++)
+                {
+                    
+                }
+            }
+            System.out.println( edges.size() );
         } 
         catch (FileNotFoundException e) {
             e.printStackTrace();

@@ -23,7 +23,7 @@ public class Node
     // private Edge northEdge ?
 
     // Node() { this.previous = this.next = null; this.number = -1; }
-    Node () { this.north = this.south = this.east = this.west = null; this.number = -1;}
+    Node (int row, int col, int number) { this.north = this.south = this.east = this.west = null; this.row = row; this.col = col; this.number = number; }
     // Node (Node previous, Node next, int number)
     // {
     //     this.previous = previous;
