@@ -22,6 +22,9 @@ public class JumpingJim
         ArrayList<Node> nodes = new ArrayList<Node>();
         ArrayList<Edge> edges = new ArrayList<Edge>();
 
+        long start = System.currentTimeMillis(); 
+        //long start = System.nanoTime();
+
         try 
         {
             Scanner s = new Scanner(file);
@@ -129,6 +132,15 @@ public class JumpingJim
                 }
                 System.out.print(" ");
             }
+            System.out.println();
+
+
+            
+            long end = System.currentTimeMillis();
+            //long end = System.nanoTime();
+            
+            System.out.println("Takes " + (end- start) + " ms to run Dijkstra's");
+
             // System.out.println( nodes.size() );
             // System.out.println( edges.size() );
 
