@@ -23,6 +23,8 @@ public class Edge
     public Node getTarget() { return this.target; }
     public void setTarget(Node target) { this.target = target; }
 
+    public int getDirection() { return this.direction; }
+
     /*
     direction = source.getDirection(target);
     */

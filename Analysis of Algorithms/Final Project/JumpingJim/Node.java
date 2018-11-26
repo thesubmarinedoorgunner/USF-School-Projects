@@ -10,20 +10,30 @@ public class Node
     // private Node previous;
     // private Node next;
     private int number; 
+    private int col;
+    private int row;
 
     //
     private Node north;
     private Node south;
     private Node east;
     private Node west;
-    private int col;
-    private int row;
+    private Edge northEdge;
+    private Edge southEdge;
+    private Edge eastEdge;
+    private Edge westEdge;
     // 
     // Do I need: 
     // private Edge northEdge ?
 
     // Node() { this.previous = this.next = null; this.number = -1; }
-    Node (int row, int col, int number) { this.north = this.south = this.east = this.west = null; this.row = row; this.col = col; this.number = number; }
+    Node (int row, int col, int number) 
+    {
+        this.row = row; this.col = col; this.number = number; 
+
+        this.north = this.south = this.east = this.west = null;
+        this.northEdge = this.southEdge = this.eastEdge = this.westEdge = null; 
+    }
     // Node (Node previous, Node next, int number)
     // {
     //     this.previous = previous;
@@ -40,12 +50,12 @@ public class Node
     public int getNumber() { return this.number; }
     public void setNumber(int number) { this.number = number; }
 
-
     public int getCol() { return this.col; }
     public void updateCol(int col) { this.col = col; }
 
     public int getRow() { return this.row; }
     public void updateRow(int row) { this.row = row; }
+
 
     public Node peekNorth() { return this.north; }
     public void updateNorth(Node north) { this.north = north; }
@@ -58,6 +68,19 @@ public class Node
     
     public Node peekWest() { return this.west; }
     public void updateWest(Node west) { this.west = west; }
+
+
+    public Edge peekNorthEdge() { return this.northEdge; }
+    public void updateNorthEdge(Edge northEdge) { this.northEdge = northEdge; }
+
+    public Edge peekSouthEdge() { return this.southEdge; }
+    public void updateSouthEdge(Edge southEdge) { this.southEdge = southEdge; }
+    
+    public Edge peekEastEdge() { return this.eastEdge; }
+    public void updateEastEdge(Edge eastEdge) { this.eastEdge = eastEdge; }
+
+    public Edge peekWestEdge() { return this.westEdge; }
+    public void updateWestEdge(Edge westEdge) { this.westEdge = westEdge; }
 
     public boolean loopCheck(Node another)
     {
