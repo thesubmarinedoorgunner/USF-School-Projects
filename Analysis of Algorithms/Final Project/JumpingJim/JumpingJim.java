@@ -1,9 +1,27 @@
+// JumpingJim.java
+// Howard Cheung
+// takes in an input file called 'input.txt' and uses Dijkstra's algorithm to find the path
+// outputs a file called 'output.txt'
+
 //import JumpingJim.*;
 
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+
+/////
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+//import java.io.FileOutputStream;
+//import java.io.IOException;
+//import java.io.OutputStreamWriter;
+import java.io.Writer;
+
+
+
+/////
+
 
 // BE VERY CAREFUL ABOUT CHEKCING WHETHER THE LAST NODE IS == TO ROW && COLUMN THAT WAS PASSED IN THROUGH THE TEXT FILE
 // BECAUSE THE VALUE FOR ROW AND COL THAT THE LAST NODE HAS IS 1 LESS THAN BOTH B/C OF INDICES 
@@ -112,25 +130,32 @@ public class JumpingJim
 
             // prints out the path
             // Order is counterclockwise (1-4) starting from North
+
+            String toFile = "";
             for (int i = 0; i < path.size(); i++)
             {
                 if ( path.get(i).getDirection() == 1 )
                 {
                     System.out.print("N");
+                    toFile += "N";
                 }    
                 if ( path.get(i).getDirection() == 2 )
                 {
                     System.out.print("E");
+                    toFile += "E";
                 } 
                 if ( path.get(i).getDirection() == 3 )
                 {
                     System.out.print("S");
+                    toFile += "S";
                 }
                 if ( path.get(i).getDirection() == 4 )
                 {
                     System.out.print("W");
+                    toFile += "W";
                 }
                 System.out.print(" ");
+                toFile += " ";
             }
             System.out.println();
 
@@ -140,6 +165,15 @@ public class JumpingJim
             //long end = System.nanoTime();
             
             System.out.println("Takes " + (end- start) + " ms to run Dijkstra's");
+
+            file = new File("output.txt");
+            BufferedWriter output = null;
+
+            output = new BufferedWriter( new FileWriter( file ) );
+            output.write( toFile );
+
+            if ( output != null) { output.close(); }
+
 
             // System.out.println( nodes.size() );
             // System.out.println( edges.size() );
@@ -158,17 +192,6 @@ public class JumpingJim
             System.out.println("Input file is corrupted or incorrect");
         }
 
-
-
-        // for (int i = 0; i < 5; i++)
-        // {    
-        //     Node node = new Node();
-        // }
-        // BFS();
     }
 
-    // public static void BFS()
-    // {
-    //     Node node = new Node();
-    // }
 }
