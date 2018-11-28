@@ -3,8 +3,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
 
-//import com.sun.tools.javac.code.Attribute.Array;
-
 public class Dijkstra
 {
     private ArrayList<Node> nodes;
@@ -22,9 +20,10 @@ public class Dijkstra
         this.base = base;
         this.target = target;
 
-        this.queue = new ArrayList<>(this.nodes);
+        this.queue = new ArrayList<Node>(this.nodes);
         this.container = new HashMap<Node, DijkstraContainer>();
 
+        // functions call for the basics of Dijkstra's
         setInfinAndNull();
         calculateDijkstra();
         setPath();
@@ -37,6 +36,7 @@ public class Dijkstra
     {
         for (Node node : nodes)
         {
+            // Constructor for the base node which you are starting from
             DijkstraContainer temp;
             if ( node == base )
             {
@@ -51,6 +51,7 @@ public class Dijkstra
         }
     }
 
+    // the heart of Dijkstra's algorithm
     public void calculateDijkstra()
     {
         while ( !queue.isEmpty() )
@@ -77,7 +78,9 @@ public class Dijkstra
 
         }
     }
-
+    
+    // finds the next Node with the smallest distance value
+    // didn't use a Priority Queue because I couldn't figure out the comparator
     public Node findMin()
     {
         int min = Integer.MAX_VALUE;
@@ -95,6 +98,7 @@ public class Dijkstra
         return isMin;
     }
 
+    // gets the neighbors of each Node
     public ArrayList<Edge> getNeighbors(Node u)
     {
         ArrayList<Edge> neighbors = new ArrayList<>();
@@ -107,6 +111,8 @@ public class Dijkstra
         return neighbors;
     }
 
+    // gets the path in reverse order because starting from target Node
+    // pushes previous Node onto stack and reverses
     public void setPath()
     {
         try 

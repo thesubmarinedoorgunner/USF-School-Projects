@@ -3,8 +3,6 @@
 // takes in an input file called 'input.txt' and uses Dijkstra's algorithm to find the path
 // outputs a file called 'output.txt'
 
-//import JumpingJim.*;
-
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,9 +15,6 @@ import java.io.FileWriter;
 //import java.io.IOException;
 //import java.io.OutputStreamWriter;
 import java.io.Writer;
-
-
-
 /////
 
 
