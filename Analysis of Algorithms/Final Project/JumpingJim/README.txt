@@ -8,6 +8,10 @@ Instructions: Ensure all 5 classes are in the same directory before you compile.
 -Edge.java
 -Dijkstra.java
 
+The original Jumping Jim txt file is included and named as "input.txt" to run by default, 
+but if you are to change the input file you must name it "input.txt" and include it in
+the same directory as the java files.
+
 Java 7 should be the minimum to compile and run, but Java 8 and above is recommended.
 Because all files are in the same directory, the only command needed to compile is:
 
