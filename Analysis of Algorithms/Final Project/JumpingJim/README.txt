@@ -8,7 +8,7 @@ Instructions: Ensure all 5 classes are in the same directory before you compile.
 -Edge.java
 -Dijkstra.java
 
-Java 7 is the minimum version needed to compile and run, but Java 8 is recommended.
+Java 7 should be the minimum to compile and run, but Java 8 and above is recommended.
 Because all files are in the same directory, the only command needed to compile is:
 
 javac JumpingJim.java
