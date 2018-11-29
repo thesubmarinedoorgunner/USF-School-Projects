@@ -7,26 +7,20 @@ import java.util.HashMap;
 // also how to handle edge cases like the corners, especially the starting value
 public class Node
 {
-    // private Node previous;
-    // private Node next;
     private int number; 
     private int col;
     private int row;
 
-    //
     private Node north;
     private Node south;
     private Node east;
     private Node west;
+
     private Edge northEdge;
     private Edge southEdge;
     private Edge eastEdge;
     private Edge westEdge;
-    // 
-    // Do I need: 
-    // private Edge northEdge ?
 
-    // Node() { this.previous = this.next = null; this.number = -1; }
     Node (int row, int col, int number) 
     {
         this.row = row; this.col = col; this.number = number; 
@@ -34,19 +28,8 @@ public class Node
         this.north = this.south = this.east = this.west = null;
         this.northEdge = this.southEdge = this.eastEdge = this.westEdge = null; 
     }
-    // Node (Node previous, Node next, int number)
-    // {
-    //     this.previous = previous;
-    //     this.next = next;
-    //     this.number = number;
-    // }
 
-    // public Node getPrevious() { return this.previous; }
-    // public void setPrevious(Node previous) { this.previous = previous; }
-
-    // public Node getNext() { return this.next; }
-    // public void setNext(Node next) { this.next = next; }
-
+    // member getters and setters
     public int getNumber() { return this.number; }
     public void setNumber(int number) { this.number = number; }
 
@@ -56,7 +39,7 @@ public class Node
     public int getRow() { return this.row; }
     public void updateRow(int row) { this.row = row; }
 
-
+    // Neighbor Node getters and setters
     public Node peekNorth() { return this.north; }
     public void updateNorth(Node north) { this.north = north; }
 
@@ -69,7 +52,7 @@ public class Node
     public Node peekWest() { return this.west; }
     public void updateWest(Node west) { this.west = west; }
 
-
+    // Edge connection getters and setters
     public Edge peekNorthEdge() { return this.northEdge; }
     public void updateNorthEdge(Edge northEdge) { this.northEdge = northEdge; }
 
@@ -93,6 +76,8 @@ public class Node
         return false;
     }
 
+    // computes direction from this Node to passed Node
+    // returns 1-4 which is direction CCW from N (where N ==1)
     public int getDirection(Node another)
     {
         // edge case with the bottom right node ?
@@ -114,6 +99,5 @@ public class Node
         // none match which is a hella problem
         return -1; 
     }
-
-
+    
 }

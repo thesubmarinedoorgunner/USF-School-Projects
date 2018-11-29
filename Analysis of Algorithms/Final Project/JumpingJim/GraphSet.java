@@ -19,7 +19,7 @@ public class GraphSet
     Dijkstra dijkstra;
     private ArrayList<Edge> path;
     
-    private File file; //= new File("input.txt");
+    private File file;
     private String toFile = "";
     BufferedWriter output = null;
 

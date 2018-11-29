@@ -28,11 +28,17 @@ public class JumpingJim
 {
     public static void main(String args[])
     {
+        long start = System.currentTimeMillis(); 
+
         GraphSet gs = new GraphSet();
         gs.readFile();
         gs.setGraph();
         gs.findPath();
         gs.writeFile();
+
+        long end = System.currentTimeMillis();
+        System.out.println("Takes " + (end- start) + "ms to run Dijkstra's");
+
         // int row, column;
         // int[][] matrix;
         // Node[][] nodeMatrix;

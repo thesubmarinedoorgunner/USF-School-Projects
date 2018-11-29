@@ -1,3 +1,6 @@
+// Edge.java
+// Howard Cheung
+// Edge class containing information about source and target Node classes
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -25,7 +28,4 @@ public class Edge
 
     public int getDirection() { return this.direction; }
 
-    /*
-    direction = source.getDirection(target);
-    */
 }
