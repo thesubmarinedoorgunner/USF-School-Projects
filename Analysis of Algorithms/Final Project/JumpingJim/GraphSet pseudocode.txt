@@ -1,0 +1,39 @@
+
+// pseudocode for graph creation
+
+GraphSet
+{
+    Input: reads in a text file called input containing row, col, and values
+    Output: returns a graph with Nodes containing the valid Edges 
+
+    int row, column;
+    row = read in first integer;
+    column = read in second integer;
+
+    int matrix[][] = 2D matrix of size [row][column];
+    ArrayList<Node> nodes;      // contains all of the nodes made from Node object
+
+    // creates the nodes
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < columnn; j++)
+        {
+            matrix[i][j] = read in value from file;
+            create Node with value, add to nodes;
+        }
+    }
+
+    // creates the edges
+    for (int i = 0; i < row; i++)
+    {
+        for (int j = 0; j < column; j++)
+        {
+            create an Edge object between node at matrix[i][j] and valid N,S,E,W nodes;
+            add edge to Node object to hold
+        }
+    }
+
+    return nodes;       // returns the ArrayList of Nodes which is essentially the graph
+}
+
+

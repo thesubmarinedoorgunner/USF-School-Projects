@@ -1,0 +1,53 @@
+
+// pseudocode for Dijkstra's Algorithm on JumpingJim
+
+Dijkstra
+{
+    Input: graph G containing nodes and the neighboring edges
+    Input: Node base, Node target
+    Output: path from base to target (also the shortest path)
+
+    Node base, target;
+    queue = add all nodes to queue list;
+
+    for (node in graph)
+    {
+        if (node == base) { set node distance to 0; }
+        else{
+            set node distance to infinity;
+            set previous node to null;
+        }
+    }
+
+    while ( queue is not empty )
+    {
+        Node u = node with minimum distance;
+
+        if ( u is equal to target node) { break; }
+
+        for (neighbors : u)
+        {
+            Node v = Node in edge that is not equal to u;
+            alternate = distance of u + 1;
+
+            if ( alternate < distance of v ){
+                distance of v = alternate;
+                previous of v = u;
+            }
+        }
+        remove u from queue;
+    }
+
+    Node u = target;
+    Stack reversePath;
+    while ( u is not base ){
+        reversePath.push ( edge from u to u.previous );
+        u = u.previous;
+    }
+
+    while ( reversePath is not empty ){
+        path = add reversePath.pop();
+    }
+
+    return path;
+}
