@@ -1,10 +1,8 @@
 
-import java.util.ArrayList;
-import java.util.HashMap;
+// Node.java
+// contains the jump value, row & col info, and neighboring edges
+// Howard Cheung
 
-
-// need an update function to check for which node to update
-// also how to handle edge cases like the corners, especially the starting value
 public class Node
 {
     private int number; 

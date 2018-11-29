@@ -1,4 +1,9 @@
 
+// Dijkstra.java
+// calculates path from passed base node and target node
+// sets the path after path is found
+// Howard Cheung
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Stack;
@@ -28,7 +33,6 @@ public class Dijkstra
         calculateDijkstra();
         setPath();
     }
-
 
     public ArrayList<Edge> getPath() { return this.path; }
 
@@ -73,9 +77,9 @@ public class Dijkstra
                     container.get( v ).updateEdge( edge );
                 }
             }
+
             neighbors.clear();
             queue.remove( u );
-
         }
     }
     
@@ -131,6 +135,7 @@ public class Dijkstra
             }
         } 
         catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Something happened.");
         }
     }
@@ -146,7 +151,9 @@ public class Dijkstra
 			this.dist = Integer.MAX_VALUE;
 			this.prev = null;
 			this.edge = null; 
-		}
+        }
+
+        // overloaded constructor for base node
 		DijkstraContainer(int zero)
 		{
 			this.dist = zero;
@@ -163,5 +170,5 @@ public class Dijkstra
 		public Edge retrieveEdge() { return this.edge; }
 		public void updateEdge(Edge edge) { this.edge = edge; }
     }
-    
+
 }
