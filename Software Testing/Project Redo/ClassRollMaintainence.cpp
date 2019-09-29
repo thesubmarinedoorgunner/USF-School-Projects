@@ -27,13 +27,13 @@ public:
     Student();
     ~Student();
 private:
-std::string fullName;
-std::string firstName;
-std::string lastName;
+    std::string fullName;
+    std::string firstName;
+    std::string lastName;
 
-int projectGrade;
-int termGrade;
-int finalGrade;
+    int projectGrade;
+    int termGrade;
+    int finalGrade;
 protected:
 };
 
@@ -42,6 +42,12 @@ class ClassRollMaintainence
 public:
     ClassRollMaintainence();
     ~ClassRollMaintainence();
+
+private:
+    std::vector<Student> studentList;
+
+protected:
+    
     
 };
 
